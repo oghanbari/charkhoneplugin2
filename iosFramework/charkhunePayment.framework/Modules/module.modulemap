@@ -1,0 +1,13 @@
+framework module charkhunePayment {
+  umbrella header "charkhunePayment.h"
+
+  export *
+  module * { export * }
+}
+
+module charkhunePayment.Swift {
+    header "charkhunePayment-Swift.h"
+    requires objc
+}
+module cryptModulu [system][extern_c] {
+}
