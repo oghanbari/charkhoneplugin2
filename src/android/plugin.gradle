@@ -16,3 +16,4 @@ android {
         exclude 'META-INF/LICENSE'
     }
 }
+configurations.all{exclude group: 'com.google.code.gson', module: 'gson'}
