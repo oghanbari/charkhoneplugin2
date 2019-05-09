@@ -42,14 +42,29 @@
     <js-module src="www/index-android.js" name="InAppBillingV3">
       <merges target="inAppPurchase" />
     </js-module>
-
+    
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="InAppBillingV3">
         <param name="android-package" value="com.alexdisler.inapppurchases.InAppBillingV3"/>
       </feature>
     </config-file>
 
+    <asset src="www/amaroid.js" target="js/amaroid.js"/>
+    
+    <js-module src="www/amaroid.js" name="amaroid">
+      <clobbers target="cordova.plugins.Amaroid" />
+    </js-module>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AmaroidBridge">
+        <param name="android-package" value="net.jhoobin.cordovabridge.AmaroidBridge"/>
+      </feature>
+    </config-file>
+
 	<framework src="src/android/plugin.gradle" custom="true" type="gradleReference" />
+    <source-file src="src/android/libs/amaroid-and.aar" target-dir="libs" />
+    <source-file src="src/android/AmaroidBridge.java" target-dir="src/net/jhoobin/cordovabridge/"/>
+    
 	<!--<source-file src="src/android/libs/gson-2.8.5.jar" target-dir="libs" />-->
 	  <source-file src="src/android/libs/bouncycastle.aar" target-dir="libs" />
 	  <source-file src="src/android/libs/inAppSDK.aar" target-dir="libs" />
