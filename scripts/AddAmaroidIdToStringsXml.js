@@ -16,7 +16,14 @@ module.exports = function (context) {
     var platformRoot = path.join(context.opts.projectRoot, 'platforms/android');
 
     var sourceFile = path.join(projectRoot , 'www/Amaroid.xml');
-    var destFile = path.join(platformRoot, 'res/values/Amaroid.xml');
+
+    var destFile;
+
+    //for sdk 26
+    //destFile = path.join(platformRoot, 'res/values/Amaroid.xml');
+
+    //for sdk 28
+    destFile = path.join(platformRoot, 'app/src/main/res/values/Amaroid.xml');
 
     var readStream = fs.createReadStream(sourceFile);
     var writeStream = fs.createWriteStream(destFile);
